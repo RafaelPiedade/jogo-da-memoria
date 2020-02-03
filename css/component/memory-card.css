@@ -1,0 +1,39 @@
+.memory-card {
+   position: relative;
+  width: 155px;
+  height: 155px;
+  background-color: #f25a70;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.memory-card.-selected{
+    background-color: #fff;
+}
+
+
+.memory-card > .icon {
+  width: 100px;
+  height: 100px;
+}
+
+.memory-card.-selected::after{
+    content: "";
+    height: 105px;
+    width: 105px;
+    background-color: rgba(0, 0, 0, 0.16);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10%;
+    z-index: 1;
+}
+
+.memory-card.-selected > .icon {
+    /* background-color: rgba(0, 0, 0, 0.16);
+    border-radius: 50% */
+    position: absolute;
+    z-index: 2;
+  }
