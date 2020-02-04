@@ -1,28 +1,29 @@
 const $root = document.querySelector("#root");
 const $memoryCard = document.createElement("article");
-const $icon = `
+const $memoryCardFront = document.createElement("article");
+
+
+const $iconCollab = `
     <img 
         class='icon'
         src='img/icon-collabcode.png'
         alt='Gueio mascote da CollabCode'
     />`;
 
-const $memoryCard2 = document.createElement("article");
-$memoryCard2.classList.add("-selected")
-    const $icon2 = `
+    const $iconC = `
     <img 
         class='icon'
         src='img/icon-c.png'
-        alt='Livro de C++'
+        alt='icone de um livro da linguagem C++'
     />`;
 
 
 $memoryCard.classList.add("memory-card");
-$memoryCard.insertAdjacentHTML("afterbegin", $icon);
-
-$memoryCard2.classList.add("memory-card")
-$memoryCard2.classList.add("-selected")
-$memoryCard2.insertAdjacentHTML("afterbegin", $icon2);
-
+$memoryCard.insertAdjacentHTML("afterbegin", $iconCollab);
 $root.insertBefore($memoryCard, null);
-$root.insertBefore($memoryCard2, null);
+
+$memoryCardFront.classList.add("memory-card")
+$memoryCardFront.classList.add("-front")
+$memoryCardFront.insertAdjacentHTML("afterbegin", $iconC);
+$root.insertBefore($memoryCardFront, null);
+
