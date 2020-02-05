@@ -5,8 +5,10 @@ function createCardsWrapper() {
   return $cardsWrapper;
 }
 
-/* $cardsWrapper.addEventListener("click", e => {
+/* 
+$cardsWrapper.addEventListener("click", e => {
   if (e.target.className == "memory-card" || e.target.className == "icon") {
     console.log("ae");
   }
-}); */
+}); 
+*/

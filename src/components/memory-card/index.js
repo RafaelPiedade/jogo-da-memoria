@@ -1,36 +1,20 @@
-function createMemoryCard() {
-  /*const $memoryCard = document.createElement("article");
-  $memoryCard.classList.add("memory-card"); */
-  const $memoryCard = `
-  <article class="memory-card">
+const createMemoryCard = () => {
+  return `
+  <article class="memory-card"
+    onClick="handleClick(this)"
+  >
     <img 
       class='icon'
       src='img/icon-collabcode.png'
       alt='Gueio mascote da CollabCode'
-      onClick="handleClick()"
       />
   </article>
   `;
-  return $memoryCard;
-}
+};
 
-function createMemoryCardFront() {
-  const $memoryCard = `
-  <article class="memory-card -front">
-    <img 
-      class='icon'
-      src='img/icon-c.png'
-      alt='Gueio mascote da CollabCode'
-      onClick="handleClick()"
-      />
-  </article>
-  `;
-  return $memoryCard;
-}
-
-function handleClick() {
-  console.log('ee')
-}
+const handleClick = element => {
+  element.classList.toggle("-front");
+};
 
 /*
 cria elemento > const $memoryCard = document.createElement("article");
