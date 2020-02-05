@@ -30,19 +30,20 @@ const icons = [
   ];
 
 const $memoryCard = createMemoryCard(icons[0]);
-const $memoryCardFront = createMemoryCard(icons[1]);
-const $memoryCard2 = createMemoryCard(icons[2]);
-const $memoryCard3 = createMemoryCard(icons[3]);
+const $memoryCardC = createMemoryCard(icons[1]);
+const $memoryCardJava = createMemoryCard(icons[2]);
+const $memoryCardJS = createMemoryCard(icons[3]);
+const $memoryCardTool = createMemoryCard(icons[4]);
 
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard2);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard2);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard3);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard3);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard4);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard4);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardTool);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardTool);
 
 $root.insertAdjacentElement("beforeend", $cardsWrapper);
