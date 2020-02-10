@@ -7,20 +7,39 @@ const memoryCard = () => {
   position: relative;
   width: 155px;
   height: 155px;
-  background-color: #f25a70;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
   border-radius: 30px;
+}
+
+.memory-card .icon {
+  width: 100px;
+  height: 100px;
+}
+
+.memory-card.-front{
+  transform: rotateY(180deg)
+}
+
+.memory-card > .thefront,
+.memory-card > .theback{
+  position:absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  cursor: pointer;
+  border-radius: 30px;
+  backface-visibility: hidden;
 }
 
-.memory-card.-front {
+.memory-card > .thefront{
   background-color: #fff;
 }
 
-.memory-card.-front::before {
+.memory-card > .thefront::before {
   content: "";
   height: 95px;
   width: 95px;
@@ -29,23 +48,14 @@ const memoryCard = () => {
   position: absolute;
 }
 
-.memory-card > .icon {
-  width: 100px;
-  height: 100px;
-}
-
-.memory-card.-front > .icon {
+.memory-card > .thefront > .icon {
   position: absolute;
   transform: translateY(-12px)
 }
 
-.memory-card > .icon.-active,
-.memory-card.-front > .icon{
-  display:none;
-}
-  
-.memory-card.-front > .icon.-active{
-  display:block;
+.memory-card > .theback{
+  background-color: #f25a70;
+  transform: rotateY(180deg);
 }
   `;
   $head.insertBefore($styles, null);
@@ -53,16 +63,20 @@ const memoryCard = () => {
   return ({ src, alt, nameClass = "" }) => `<article 
     class="memory-card ${nameClass}"
     onclick="handleClick(this)">
+      <div class="thefront">    
         <img 
           class='icon -active'
           src='${src}'
           alt=${alt}
         />
+      </div>
+      <div class="theback">
         <img 
           class='icon'
           src='img/icon-collabcode.png'
           alt='Gueio mascote da CollabCode'
         />
+      </div>
   </article>`;
 };
 
