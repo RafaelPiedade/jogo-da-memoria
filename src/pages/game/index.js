@@ -9,22 +9,22 @@ const icons = [
   {
     src: "img/icon-c.png",
     alt: "Icone de um livro C++",
-    nameClass: "-front"
+    nameClass: ""
   },
   {
     src: "img/icon-java.png",
     alt: "Icone de um livro Java",
-    nameClass: "-front"
+    nameClass: ""
   },
   {
     src: "img/icon-js.png",
     alt: "Icone de um livro JavaScript",
-    nameClass: "-front"
+    nameClass: ""
   },
   {
     src: "img/icon-settings.png",
     alt: "Icone de engrenagens",
-    nameClass: "-front"
+    nameClass: ""
   }
 ];
 

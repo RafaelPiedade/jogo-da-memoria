@@ -10,7 +10,7 @@ const memoryCard = () => {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
   transform-style: preserve-3d;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   border-radius: 30px;
 }
 
@@ -36,7 +36,12 @@ const memoryCard = () => {
 }
 
 .memory-card > .thefront{
+  background-color: #f25a70;
+}
+
+.memory-card > .theback{
   background-color: #fff;
+  transform: rotateY(180deg);
 }
 
 .memory-card > .thefront::before {
@@ -50,12 +55,7 @@ const memoryCard = () => {
 
 .memory-card > .thefront > .icon {
   position: absolute;
-  transform: translateY(-12px)
-}
-
-.memory-card > .theback{
-  background-color: #f25a70;
-  transform: rotateY(180deg);
+  transform: translateY(-12px);
 }
   `;
   $head.insertBefore($styles, null);
@@ -63,21 +63,36 @@ const memoryCard = () => {
   return ({ src, alt, nameClass = "" }) => `<article 
     class="memory-card ${nameClass}"
     onclick="handleClick(this)">
-      <div class="thefront">    
-        <img 
+    <div class="thefront">     
+    <img 
+    class='icon'
+    src='img/icon-collabcode.png'
+    alt='Gueio mascote da CollabCode'
+  />
+      </div>
+      <div class="theback">
+      <img 
           class='icon -active'
           src='${src}'
           alt=${alt}
-        />
-      </div>
-      <div class="theback">
-        <img 
-          class='icon'
-          src='img/icon-collabcode.png'
-          alt='Gueio mascote da CollabCode'
-        />
-      </div>
+        /> 
+      </div>    
   </article>`;
 };
+let contador = [];
+const handleClick = $component => {
+  console.log(contador);
 
-const handleClick = $component => $component.classList.toggle("-front");
+  if (contador.length < 2) {
+    $component.classList.toggle("-front");
+    contador.push($component);
+  }
+
+  if (contador.length === 2) {
+    window.setTimeout(() => {
+      contador[0].classList.toggle("-front");
+      contador[1].classList.toggle("-front");
+      contador = [];
+    }, 1500);
+  }
+};
