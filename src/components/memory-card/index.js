@@ -14,13 +14,13 @@ const memoryCard = () => {
   border-radius: 30px;
 }
 
+.memory-card.-front{
+  transform: rotateY(180deg)
+}
+
 .memory-card .icon {
   width: 100px;
   height: 100px;
-}
-
-.memory-card.-front{
-  transform: rotateY(180deg)
 }
 
 .memory-card > .thefront,
@@ -80,7 +80,4 @@ const memoryCard = () => {
   </article>`;
 };
 
-const handleClick = (element, src) => {
-  console.log(element);
-  element.classList.toggle("-front");
-};
+const handleClick = $component => $component.classList.toggle("-front");
