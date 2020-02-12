@@ -1,4 +1,5 @@
-const cardsWrapper = () => {
+let qtdMemoryCardActive = 0;
+function createCardsWrapper() {
   const $head = document.querySelector("head");
   const $style = document.createElement("style");
   $style.textContent = `
@@ -15,9 +16,12 @@ const cardsWrapper = () => {
 
   $head.insertBefore($style, null);
 
-  return () => {
-    const $cardsWrapper = document.createElement("section");
-    $cardsWrapper.classList.add("cards-wrapper");
-    return $cardsWrapper;
-  };
-};
+  const $cardsWrapper = document.createElement("section");
+  $cardsWrapper.classList.add("cards-wrapper");
+
+  $cardsWrapper.addEventListener("click", event => {
+    qtdMemoryCardActive = $cardsWrapper.querySelectorAll('.memory-card.-front').length
+  });
+
+  return $cardsWrapper;
+}

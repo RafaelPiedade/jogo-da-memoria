@@ -28,7 +28,6 @@ const icons = [
   }
 ];
 
-const createCardsWrapper = cardsWrapper();
 const createMemoryCard = memoryCard();
 
 const $cardsWrapper = createCardsWrapper();

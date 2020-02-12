@@ -79,20 +79,21 @@ const memoryCard = () => {
       </div>    
   </article>`;
 };
-let contador = [];
 const handleClick = $component => {
-  console.log(contador);
-
-  if (contador.length < 2) {
+  if (qtdMemoryCardActive < 2) {
     $component.classList.toggle("-front");
-    contador.push($component);
   }
+  console.log("Dentro doclick:", qtdMemoryCardActive);
+  if (qtdMemoryCardActive === 1) {
+    setTimeout(() => {
+      const $activeMemoryCards = document.querySelectorAll(
+        ".memory-card.-front"
+      );
+      $activeMemoryCards.forEach($memoryCard => {
+        $memoryCard.classList.remove("-front");
+      });
 
-  if (contador.length === 2) {
-    window.setTimeout(() => {
-      contador[0].classList.toggle("-front");
-      contador[1].classList.toggle("-front");
-      contador = [];
+      qtdMemoryCardActive = 0;
     }, 1500);
   }
 };
