@@ -14,7 +14,7 @@ const memoryCard = () => {
   border-radius: 30px;
 }
 
-.memory-card.-front{
+.memory-card.-active{
   transform: rotateY(180deg)
 }
 
@@ -80,20 +80,8 @@ const memoryCard = () => {
   </article>`;
 };
 const handleClick = $component => {
-  if (qtdMemoryCardActive < 2) {
-    $component.classList.toggle("-front");
-  }
-  console.log("Dentro doclick:", qtdMemoryCardActive);
-  if (qtdMemoryCardActive === 1) {
-    setTimeout(() => {
-      const $activeMemoryCards = document.querySelectorAll(
-        ".memory-card.-front"
-      );
-      $activeMemoryCards.forEach($memoryCard => {
-        $memoryCard.classList.remove("-front");
-      });
-
-      qtdMemoryCardActive = 0;
-    }, 1500);
+  if (!$component.classList.contains('-active') && $MemoryCardsActive.length < 2) {
+    $component.classList.toggle("-active");
+    $MemoryCardsActive.push($component)
   }
 };

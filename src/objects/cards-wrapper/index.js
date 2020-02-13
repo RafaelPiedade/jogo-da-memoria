@@ -1,4 +1,5 @@
-let qtdMemoryCardActive = 0;
+let $MemoryCardsActive = [];
+
 function createCardsWrapper() {
   const $head = document.querySelector("head");
   const $style = document.createElement("style");
@@ -20,7 +21,23 @@ function createCardsWrapper() {
   $cardsWrapper.classList.add("cards-wrapper");
 
   $cardsWrapper.addEventListener("click", event => {
-    qtdMemoryCardActive = $cardsWrapper.querySelectorAll('.memory-card.-front').length
+    if ($MemoryCardsActive.length === 2) {
+      let $icon1 = $MemoryCardsActive[0].querySelector('.icon.-active')
+      let $icon2 = $MemoryCardsActive[1].querySelector('.icon.-active')
+      console.log($icon1.src)
+      if ($icon1.src === $icon2.src) {
+        console.log("Acertou");
+        $MemoryCardsActive = []
+      } else {
+        console.log("Errou");
+        setTimeout(() => {
+          $MemoryCardsActive.forEach($memoryCard => {
+            $memoryCard.classList.remove("-active");
+          });
+          $MemoryCardsActive = []
+        }, 1500);
+      }
+    }
   });
 
   return $cardsWrapper;
