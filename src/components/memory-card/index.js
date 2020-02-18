@@ -80,8 +80,11 @@ const memoryCard = () => {
   </article>`;
 };
 const handleClick = $component => {
-  if (!$component.classList.contains('-active') && $MemoryCardsActive.length < 2) {
+  if (
+    !$component.classList.contains("-active") &&
+    $MemoryCardsActive.length < 2
+  ) {
     $component.classList.toggle("-active");
-    $MemoryCardsActive.push($component)
+    $MemoryCardsActive.push($component);
   }
 };

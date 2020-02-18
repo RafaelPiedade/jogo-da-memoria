@@ -19,22 +19,23 @@ function createCardsWrapper() {
 
   const $cardsWrapper = document.createElement("section");
   $cardsWrapper.classList.add("cards-wrapper");
-
+  let score = 0;
   $cardsWrapper.addEventListener("click", event => {
     if ($MemoryCardsActive.length === 2) {
-      let $icon1 = $MemoryCardsActive[0].querySelector('.icon.-active')
-      let $icon2 = $MemoryCardsActive[1].querySelector('.icon.-active')
-      console.log($icon1.src)
-      if ($icon1.src === $icon2.src) {
-        console.log("Acertou");
-        $MemoryCardsActive = []
+      let $icon1 = $MemoryCardsActive[0].querySelector(".icon.-active");
+      let $icon2 = $MemoryCardsActive[1].querySelector(".icon.-active");
+      if ($icon1.getAttribute("src") === $icon2.getAttribute("src")) {
+        score++;
+        console.log("Value Score:", score);
+        $MemoryCardsActive = [];
       } else {
         console.log("Errou");
+        
         setTimeout(() => {
           $MemoryCardsActive.forEach($memoryCard => {
             $memoryCard.classList.remove("-active");
           });
-          $MemoryCardsActive = []
+          $MemoryCardsActive = [];  
         }, 1500);
       }
     }
