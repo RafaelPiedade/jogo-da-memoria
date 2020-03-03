@@ -1,5 +1,3 @@
-let $MemoryCardsActive = [];
-
 function createCardsWrapper() {
   const $head = document.querySelector("head");
   const $style = document.createElement("style");
@@ -19,27 +17,29 @@ function createCardsWrapper() {
 
   const $cardsWrapper = document.createElement("section");
   $cardsWrapper.classList.add("cards-wrapper");
-  let score = 0;
+
   $cardsWrapper.addEventListener("click", event => {
-    if ($MemoryCardsActive.length === 2) {
-      let $icon1 = $MemoryCardsActive[0].querySelector(".icon.-active");
-      let $icon2 = $MemoryCardsActive[1].querySelector(".icon.-active");
-      if ($icon1.getAttribute("src") === $icon2.getAttribute("src")) {
-        score++;
-        console.log("Value Score:", score);
-        $MemoryCardsActive = [];
-      } else {
-        console.log("Errou");
-        
-        setTimeout(() => {
-          $MemoryCardsActive.forEach($memoryCard => {
-            $memoryCard.classList.remove("-active");
-          });
-          $MemoryCardsActive = [];  
-        }, 1500);
-      }
-    }
+    checkSure()
   });
 
   return $cardsWrapper;
+}
+
+function checkSure(){
+  if (store.$MemoryCardsActive.length === 2) {
+    let $icon1 = store.$MemoryCardsActive[0].querySelector(".icon.-active");
+    let $icon2 = store.$MemoryCardsActive[1].querySelector(".icon.-active");
+    if ($icon1.getAttribute("src") === $icon2.getAttribute("src")) {
+      store.score++;
+      console.log("Value Score:", store.score);
+      store.$MemoryCardsActive = [];
+    } else {
+      setTimeout(() => {
+        store.$MemoryCardsActive.forEach($memoryCard => {
+          $memoryCard.classList.remove("-active");
+        });
+        store.$MemoryCardsActive = [];
+      }, 1500);
+    }
+  }
 }
