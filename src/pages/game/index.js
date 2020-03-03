@@ -29,7 +29,7 @@
     }
   ];
 
-  const createMemoryCard = memoryCard();
+  const createMemoryCard = memoryCard.create();
 
   const $cardsWrapper = createCardsWrapper();
   const $memoryCard = createMemoryCard(icons[0]);
