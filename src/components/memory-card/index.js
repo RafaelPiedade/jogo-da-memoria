@@ -60,6 +60,19 @@ const memoryCard = () => {
   `;
   $head.insertBefore($styles, null);
 
+  const handleClick = $component => {
+    if (!$component.classList.contains("-active")) {
+      activeMemoryCard($component);
+      store.$MemoryCardsActive.push($component);
+    }
+  };
+
+  function activeMemoryCard($component) {
+    if (store.$MemoryCardsActive.length < 2) {
+      $component.classList.add("-active");
+    }
+  }
+
   return ({ src, alt, nameClass = "" }) => `<article 
     class="memory-card ${nameClass}"
     onclick="handleClick(this)">
@@ -79,15 +92,3 @@ const memoryCard = () => {
       </div>    
   </article>`;
 };
-const handleClick = $component => {
-  if (!$component.classList.contains("-active")) {
-    activeMemoryCard($component)
-    store.$MemoryCardsActive.push($component);
-  }
-};
-
-function activeMemoryCard($component) {
-  if (store.$MemoryCardsActive.length < 2) {
-    $component.classList.add("-active");
-  }
-}
