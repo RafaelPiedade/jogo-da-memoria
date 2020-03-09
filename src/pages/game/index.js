@@ -30,8 +30,9 @@
   ];
 
   const createMemoryCard = memoryCard.create();
-
   const $cardsWrapper = createCardsWrapper();
+  const $pointBar = pointBar.create();
+
   const $memoryCard = createMemoryCard(icons[0]);
   const $memoryCardC = createMemoryCard(icons[1]);
   const $memoryCardJava = createMemoryCard(icons[2]);
@@ -49,5 +50,6 @@
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardTool);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardTool);
 
+  $root.insertAdjacentHTML("afterbegin", $pointBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
 })();
