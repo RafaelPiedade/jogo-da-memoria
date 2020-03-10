@@ -32,7 +32,12 @@ const pointBar = (() => {
     `;
   };
 
+  module.updateScore = () =>{
+    const $number = document.querySelector('.point-bar > .number')
+    $number.textContent = store.score
+  }
   return {
-    create: module.create
+    create: module.create,
+    updateScore: module.updateScore
   };
 })();

@@ -28,7 +28,7 @@ function createCardsWrapper() {
       let $icon2 = store.$MemoryCardsActive[1].querySelector(".icon.-active");
       if ($icon1.getAttribute("src") === $icon2.getAttribute("src")) {
         store.score++;
-        console.log("Value Score:", store.score);
+        pointBar.updateScore();
         store.$MemoryCardsActive = [];
       } else {
         setTimeout(() => {
