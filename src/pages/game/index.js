@@ -32,7 +32,7 @@
   const createMemoryCard = memoryCard.create();
   const $cardsWrapper = createCardsWrapper();
   const $pointBar = pointBar.create();
-  const $buttonGame = buttonGame.create();
+  const $buttonGame = gameButton.create();
 
   const $memoryCard = createMemoryCard(icons[0]);
   const $memoryCardC = createMemoryCard(icons[1]);
@@ -52,6 +52,6 @@
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardTool);
 
   $root.insertAdjacentHTML("afterbegin", $pointBar);
-  $root.insertAdjacentHTML("beforeend", $buttonGame);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
+  $root.insertAdjacentHTML("beforeend", $buttonGame);
 })();
