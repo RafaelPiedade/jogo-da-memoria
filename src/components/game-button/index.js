@@ -16,17 +16,26 @@ const gameButton = (() => {
       cursor:pointer;
       background-color:#2ed573;
       color: #fffcee;
-      font-family:font-family: "Comfortaa", sans-serif;
+      font-family:"Comfortaa", sans-serif;
       font-size: 1.05em;
       font-weight: bold;
       border: 2px solid #fffcee;
       transition: background 200ms linear;
       text-transform: uppercase;
       box-shadow: 0px 4px 8px #3a4042;
+      z-index: 2;
+      transition: opacity 300ms linear, height 0ms linear 400ms;
     }
     .game-button:hover{
       background-color:#2b9f5b;
     }
+
+    .game-button.-disable{
+      opacity: 0;
+      overflow: hidden;
+      height: 0;
+    }
+
     `;
 
     $head.insertBefore($style, null);
@@ -35,10 +44,18 @@ const gameButton = (() => {
   module.create = () => {
     module._style();
     return `
-        <button class="game-button">Start</button>
+        <button class="game-button" onclick="gameButton.handleClick(this)">Start</button>
       `;
   };
+
+  module.handleClick = ($component)=>{
+    console.log($component)
+    $component.classList.add('-disable')
+    membrane.disabled($component);
+
+  }
   return {
-    create: module.create
+    create: module.create,
+    handleClick: module.handleClick
   };
 })();
