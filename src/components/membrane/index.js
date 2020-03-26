@@ -6,6 +6,7 @@ const membrane = (() => {
     const $style = document.createElement("style");
     $style.textContent = `
     .membrane{
+      display:none;
         width: 100%;
         height: 100%;
         background-color: #000;

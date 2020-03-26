@@ -32,17 +32,15 @@
   const createMemoryCard = memoryCard.create();
   const $cardsWrapper = createCardsWrapper();
   const $pointBar = pointBar.create();
-  const $buttonGame = gameButton.create();
-  const $membrane = membrane.create()
+  const $layerStart = layerStart.render("VAI")
 
-  const $memoryCard = createMemoryCard(icons[0]);
+
+
   const $memoryCardC = createMemoryCard(icons[1]);
   const $memoryCardJava = createMemoryCard(icons[2]);
   const $memoryCardJS = createMemoryCard(icons[3]);
   const $memoryCardTool = createMemoryCard(icons[4]);
 
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
@@ -52,8 +50,9 @@
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardTool);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardTool);
 
-  $root.insertAdjacentHTML('beforeend',$membrane)
+  //$root.insertAdjacentHTML('beforeend',$membrane)
   $root.insertAdjacentHTML("afterbegin", $pointBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
-  $root.insertAdjacentHTML("beforeend", $buttonGame);
+  $root.insertAdjacentHTML("beforeend", $layerStart);
+
 })();

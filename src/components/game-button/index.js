@@ -41,21 +41,15 @@ const gameButton = (() => {
     $head.insertBefore($style, null);
   };
 
-  module.create = () => {
+  module.render = content => {
     module._style();
     return `
-        <button class="game-button" onclick="gameButton.handleClick(this)">Start</button>
+        <button class="game-button">${content}</button>
       `;
   };
 
-  module.handleClick = ($component)=>{
-    console.log($component)
-    $component.classList.add('-disable')
-    membrane.disabled($component);
-
-  }
   return {
-    create: module.create,
+    render: module.render,
     handleClick: module.handleClick
   };
 })();
