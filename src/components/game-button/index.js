@@ -8,23 +8,20 @@ const gameButton = (() => {
     .game-button{
       width: 80px;
       height: 80px;
+      border: 2px solid #fffcee;
       border-radius: 50%;
       position: absolute;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      cursor:pointer;
-      background-color:#2ed573;
       color: #fffcee;
-      font-family:"Comfortaa", sans-serif;
-      font-size: 1.05em;
+      background-color:#2ed573;
       font-weight: bold;
-      border: 2px solid #fffcee;
-      transition: background 200ms linear;
       text-transform: uppercase;
+      font-size: 1.05em;
+      cursor:pointer;
       box-shadow: 0px 4px 8px #3a4042;
-      z-index: 2;
-      transition: opacity 300ms linear, height 0ms linear 400ms;
+      transition: opacity 200ms linear;
     }
     .game-button:hover{
       background-color:#2b9f5b;
@@ -33,7 +30,8 @@ const gameButton = (() => {
     .game-button.-disable{
       opacity: 0;
       overflow: hidden;
-      height: 0;
+
+      
     }
 
     `;
@@ -49,7 +47,6 @@ const gameButton = (() => {
   };
 
   return {
-    render: module.render,
-    handleClick: module.handleClick
+    render: module.render
   };
 })();

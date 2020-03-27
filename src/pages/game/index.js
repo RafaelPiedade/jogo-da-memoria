@@ -50,7 +50,6 @@
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardTool);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardTool);
 
-  //$root.insertAdjacentHTML('beforeend',$membrane)
   $root.insertAdjacentHTML("afterbegin", $pointBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
   $root.insertAdjacentHTML("beforeend", $layerStart);
