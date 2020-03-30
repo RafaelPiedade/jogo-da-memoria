@@ -21,17 +21,16 @@ const gameButton = (() => {
       font-size: 1.05em;
       cursor:pointer;
       box-shadow: 0px 4px 8px #3a4042;
-      transition: opacity 200ms linear;
+      transition: opacity 200ms linear, transform 200ms linear;
     }
     .game-button:hover{
       background-color:#2b9f5b;
     }
-
+    
     .game-button.-disable{
       opacity: 0;
       overflow: hidden;
-
-      
+      transform:  translate(-50%,-35%) scale(2);
     }
 
     `;
