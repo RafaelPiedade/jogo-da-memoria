@@ -9,8 +9,8 @@ const titleLogin = (() => {
     .title-login {
         color: #f25a70;
         font-size: 24px;
-        text-align:center;
         text-transform: uppercase;
+        letter-spacing:0.6px
     }
     `;
 
