@@ -1,0 +1,27 @@
+{
+  "name": "jogo-da-memoria",
+  "version": "1.0.0",
+  "description": "Jogo da memória CollabCode",
+  "main": "testeFunction.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelPiedade/jogo-da-memoria.git"
+  },
+  "keywords": [
+    "JS",
+    "HTML",
+    "CSS"
+  ],
+  "author": "Rafael Piedade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaelPiedade/jogo-da-memoria/issues"
+  },
+  "homepage": "https://github.com/RafaelPiedade/jogo-da-memoria#readme",
+  "dependencies": {
+    "yup": "^0.28.3"
+  }
+}

@@ -12,9 +12,17 @@
   const $labelCollabcode = labelCollabcode.render("Username ou e-mail")
   const $inputCollabcode = inputCollabcode.render("example@email.com", "email")
 
+  const $labelCollabcode2 = labelCollabcode.render("Password")
+  const $inputCollabcode2 = inputCollabcode.render("", "password")
+
+  const $buttonFrom = buttonForm.render("login")
+
   $root.insertAdjacentHTML("beforeend", $loginButton);
   $root.insertAdjacentHTML("beforeend", $signupButton);
   $root.insertAdjacentHTML("beforeend", $logoWrapper);
   $root.insertAdjacentHTML("beforeend",$labelCollabcode)
   $root.insertAdjacentHTML("beforeend",$inputCollabcode)
+  $root.insertAdjacentHTML("beforeend",$labelCollabcode2)
+  $root.insertAdjacentHTML("beforeend",$inputCollabcode2)
+  $root.insertAdjacentHTML("beforeend",$buttonFrom)
 })();
