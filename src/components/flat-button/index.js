@@ -17,8 +17,10 @@ const flatButton = (() => {
         width: 50%;
         height: 176px;
         text-transform: uppercase;
+        text-decoration: none;
         text-align: center;
-        line-height: 130px;
+        padding-top:60px;
+        box-sizing: border-box;
       }`;
 
     $head.insertAdjacentElement("beforeend", $style);
@@ -27,7 +29,7 @@ const flatButton = (() => {
   module.render = (content = "", active = false) => {
     module._id++;
     module._style(active);
-    return `<div class="flat-button-${module._id}">${content}</div>`;
+    return `<a href="#" class="flat-button-${module._id}">${content}</a>`;
   };
   return {
     render: module.render
