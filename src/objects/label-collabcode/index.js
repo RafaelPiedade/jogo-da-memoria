@@ -7,8 +7,14 @@ const labelCollabcode = (() => {
 
     $style.textContent = `
       .label-collabcode{
-        color:#9c9fa0;
+        color:#3a4042;
         font-size: 16px;
+        opacity:0.5;
+      }
+
+      .input-collabcode + .label-collabcode {
+        margin-top:30px;
+        display: block;
       }
       `;
 
