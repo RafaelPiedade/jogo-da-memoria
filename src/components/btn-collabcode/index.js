@@ -19,6 +19,7 @@ const btnCollabcode = (() => {
       .input-collabcode + .btn-collabcode{
           margin-top:45px;
       }
+      
       `;
 
     $head.insertBefore($style, null);

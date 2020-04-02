@@ -15,14 +15,21 @@ const formLogin = (() => {
 
   module._children = () => {
     const $labelEmail = labelCollabcode.render("Username ou e-mail");
-    const $inputEmail = inputCollabcode.render("example@email.com", "text");
+    const $inputEmail = inputCollabcode.render({
+      placeholder: "example@email.com"
+    });
 
     const $labelPassword = labelCollabcode.render("Password");
-    const $inputPassword = inputCollabcode.render("*********", "password");
+    const $inputPassword = inputCollabcode.render({
+      placeholder: "*********",
+      type: "password"
+    });
 
-    const $forgetPassword = labelCollabcode.render("Forget password?");
+    const $forgetPassword = linkCollabcode.render({
+      content: "Forget Password ?"
+    });
 
-    const $btnCollabcode = btnCollabcode.render("Login")
+    const $btnCollabcode = btnCollabcode.render("Login");
 
     return `
     ${$labelEmail}
@@ -31,7 +38,7 @@ const formLogin = (() => {
     ${$labelPassword}
     ${$inputPassword}
     ${$forgetPassword}
-    
+
     ${$btnCollabcode}
     `;
   };
