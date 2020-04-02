@@ -9,12 +9,11 @@ const formSignup = (() => {
     const $emailInput = inputCollabcode.render("example@email.com", "email");
 
     const $passwordLabel = labelCollabcode.render("Password");
-    const $passwordInput = inputCollabcode.render("", "password");
+    const $passwordInput = inputCollabcode.render("*********", "password");
 
     const $confirmPasswordLabel = labelCollabcode.render("Confirm password");
-    const $confirmPasswordInput = inputCollabcode.render("", "password");
+    const $confirmPasswordInput = inputCollabcode.render("*********", "password");
     const $btnCollabcode = btnCollabcode.render("Sign up");
-    console.log($btnCollabcode)
 
     return `
     ${$usernameLabel}

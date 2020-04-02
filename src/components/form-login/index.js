@@ -6,41 +6,41 @@ const formLogin = (() => {
     const $style = document.createElement("style");
 
     $style.textContent = `
-        .form-input {
-            margin: 0 30px;
-        }
-
-        .form-input > label{
-            display:block;
-            font-size: 16px;
-            color:#9c9fa0;
-        }
-
-        .form-input > input{
-            color:#3a4042;
-            font-size: 18px;
-            width:100%;
-            line-height: 40px;
-            border: none;
-            border-bottom: 2px solid #9c9fa0;
-        }
-        .form-input > input::placeholder{
-            color: #3a4042;
-            opacity:1;
-        }
-        `;
+        .form-login {
+            padding: 0 35px 35px;
+        }`;
 
     $head.insertBefore($style, null);
+  };
+
+  module._children = () => {
+    const $labelEmail = labelCollabcode.render("Username ou e-mail");
+    const $inputEmail = inputCollabcode.render("example@email.com", "text");
+
+    const $labelPassword = labelCollabcode.render("Password");
+    const $inputPassword = inputCollabcode.render("*********", "password");
+
+    const $forgetPassword = labelCollabcode.render("Forget password?");
+
+    const $btnCollabcode = btnCollabcode.render("Login")
+
+    return `
+    ${$labelEmail}
+    ${$inputEmail}
+
+    ${$labelPassword}
+    ${$inputPassword}
+    ${$forgetPassword}
+    
+    ${$btnCollabcode}
+    `;
   };
 
   module.render = () => {
     module._style();
     return `
         <form class="form-login">
-            <div class="form-input">
-                <label>Username ou e-mail</label>
-                <input type="email" placeholder="example@email.com"/>
-            </div>
+           ${module._children()}
         </form>
         `;
   };
