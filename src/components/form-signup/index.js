@@ -58,12 +58,25 @@ const formSignup = (() => {
 
   module.render = () => {
     module._style();
-    return `<form class="form-signup" action="" method="POST">
+    return `<form class="form-signup" action="" method="POST" onSubmit="formSignup.makeSignup()">
     ${module._children()}
     </form>`;
   };
 
+  module.makeSignup = () => {
+    const $root = document.querySelector("#root");
+    let $children = $root.firstElementChild
+    while($children){
+      $children.remove();
+      $children = $root.firstElementChild;
+    }
+
+    document.querySelectorAll('style').forEach($e => $e.remove())
+    LoginPage()
+  };
+
   return {
-    render: module.render
+    render: module.render,
+    makeSignup: module.makeSignup
   };
 })();

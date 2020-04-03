@@ -26,11 +26,12 @@ const flatButton = (() => {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = (content = "", active = false) => {
+  module.render = ({content = "", active = false, onclick=""}) => {
     module._id++;
     module._style(active);
-    return `<a href="#" class="flat-button-${module._id}">${content}</a>`;
+    return `<a href="#" ${onclick && `onclick="${onclick}"`} class="flat-button-${module._id}">${content}</a>`;
   };
+  
   return {
     render: module.render
   };

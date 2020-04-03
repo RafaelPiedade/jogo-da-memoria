@@ -1,17 +1,23 @@
-(function() {
+const SignupPage = () => {
   const $root = document.querySelector("#root");
 
-  const $loginButton = flatButton.render("Log in");
-  const $signupButton = flatButton.render("Sign up", true);
+  const $loginButton = flatButton.render({
+    content: "Login",
+    onclick: "goToLogin()"
+  });
+  const $signupButton = flatButton.render({
+    content: "Sign up",
+    active: true,
+    onclick: "goToSignup()"
+  });
 
   const $logoCollabcode = logoCollabcode.render();
   const $titleLogin = titleLogin.render("Welcome!");
   const $logoWrapper = logoWrapper.render($logoCollabcode, $titleLogin);
-  const $formSignup = formSignup.render()
+  const $formSignup = formSignup.render();
 
   $root.insertAdjacentHTML("beforeend", $loginButton);
   $root.insertAdjacentHTML("beforeend", $signupButton);
   $root.insertAdjacentHTML("beforeend", $logoWrapper);
-  $root.insertAdjacentHTML("beforeend",$formSignup)
-
-})();
+  $root.insertAdjacentHTML("beforeend", $formSignup);
+};

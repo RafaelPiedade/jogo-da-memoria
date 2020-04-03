@@ -46,13 +46,26 @@ const formLogin = (() => {
   module.render = () => {
     module._style();
     return `
-        <form class="form-login">
+        <form class="form-login" onSubmit="formLogin.makeLogin()">
            ${module._children()}
         </form>
         `;
   };
 
+  module.makeLogin = () => {
+    const $root = document.querySelector("#root");
+    let $children = $root.firstElementChild
+    while($children){
+      $children.remove();
+      $children = $root.firstElementChild;
+    }
+
+    document.querySelectorAll('style').forEach($e => $e.remove())
+    GamePage()
+  };
+
   return {
-    render: module.render
+    render: module.render,
+    makeLogin: module.makeLogin
   };
 })();

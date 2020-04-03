@@ -1,4 +1,4 @@
-(() => {
+const GamePage = () => {
   const $root = document.querySelector("#root");
 
   const icons = [
@@ -54,4 +54,4 @@
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
   $root.insertAdjacentHTML("beforeend", $layerStart);
 
-})();
+};
