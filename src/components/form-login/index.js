@@ -16,20 +16,25 @@ const formLogin = (() => {
   module._children = () => {
     const $labelEmail = labelCollabcode.render("Username ou e-mail");
     const $inputEmail = inputCollabcode.render({
-      placeholder: "example@email.com"
+      placeholder: "example@email.com",
     });
 
     const $labelPassword = labelCollabcode.render("Password");
     const $inputPassword = inputCollabcode.render({
-      placeholder: "*********",
-      type: "password"
+      id: "password",
+      placeholder: "8 digite",
+      type: "password",
     });
+    const $eyeCollabcode = ayeCollabcode.render({ attrFor: "password" });
 
     const $forgetPassword = linkCollabcode.render({
-      content: "Forget Password ?"
+      content: "Forget Password ?",
     });
 
-    const $btnCollabcode = btnCollabcode.render("Login");
+    const $btnCollabcode = btnCollabcode.render({
+      content: "Login",
+      path: "game",
+    });
 
     return `
     ${$labelEmail}
@@ -37,6 +42,7 @@ const formLogin = (() => {
 
     ${$labelPassword}
     ${$inputPassword}
+    ${$eyeCollabcode}
     ${$forgetPassword}
 
     ${$btnCollabcode}
@@ -46,26 +52,17 @@ const formLogin = (() => {
   module.render = () => {
     module._style();
     return `
-        <form class="form-login" onSubmit="formLogin.makeLogin()">
+        <form 
+          class="form-login"
+          method="POST" 
+          action=""
+        >
            ${module._children()}
         </form>
         `;
   };
 
-  module.makeLogin = () => {
-    const $root = document.querySelector("#root");
-    let $children = $root.firstElementChild
-    while($children){
-      $children.remove();
-      $children = $root.firstElementChild;
-    }
-
-    document.querySelectorAll('style').forEach($e => $e.remove())
-    GamePage()
-  };
-
   return {
     render: module.render,
-    makeLogin: module.makeLogin
   };
 })();

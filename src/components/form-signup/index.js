@@ -4,27 +4,30 @@ const formSignup = (() => {
   module._children = () => {
     const $usernameLabel = labelCollabcode.render("Username");
     const $usernameInput = inputCollabcode.render({
-      placeholder: "Name-example"
+      placeholder: "Name-example",
     });
 
     const $emailLabel = labelCollabcode.render("E-mail");
     const $emailInput = inputCollabcode.render({
       placeholder: "example@email.com",
-      type: "email"
+      type: "email",
     });
 
     const $passwordLabel = labelCollabcode.render("Password");
     const $passwordInput = inputCollabcode.render({
       placeholder: "*********",
-      type: "password"
+      type: "password",
     });
 
     const $confirmPasswordLabel = labelCollabcode.render("Confirm password");
     const $confirmPasswordInput = inputCollabcode.render({
       placeholder: "*********",
-      type: "password"
+      type: "password",
     });
-    const $btnCollabcode = btnCollabcode.render("Sign up");
+    const $btnCollabcode = btnCollabcode.render({
+      content: "Sign up",
+      path: "login",
+    });
 
     return `
     ${$usernameLabel}
@@ -58,25 +61,17 @@ const formSignup = (() => {
 
   module.render = () => {
     module._style();
-    return `<form class="form-signup" action="" method="POST" onSubmit="formSignup.makeSignup()">
+    return `
+    <form 
+      class="form-signup" 
+      method="POST" 
+      action="" 
+    >
     ${module._children()}
     </form>`;
   };
 
-  module.makeSignup = () => {
-    const $root = document.querySelector("#root");
-    let $children = $root.firstElementChild
-    while($children){
-      $children.remove();
-      $children = $root.firstElementChild;
-    }
-
-    document.querySelectorAll('style').forEach($e => $e.remove())
-    LoginPage()
-  };
-
   return {
     render: module.render,
-    makeSignup: module.makeSignup
   };
 })();
