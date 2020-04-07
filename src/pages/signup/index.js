@@ -1,14 +1,14 @@
-const SignupPage = () => {
+const singnup = () => {
   const $root = document.querySelector("#root");
 
   const $loginButton = flatButton.render({
     content: "Login",
-    onclick: "goToLogin()"
+    path: "login"
   });
   const $signupButton = flatButton.render({
     content: "Sign up",
     active: true,
-    onclick: "goToSignup()"
+    path: "signup"
   });
 
   const $logoCollabcode = logoCollabcode.render();
