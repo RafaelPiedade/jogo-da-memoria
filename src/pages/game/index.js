@@ -1,4 +1,4 @@
-const GamePage = () => {
+const game = () => {
   const $root = document.querySelector("#root");
 
   const icons = [

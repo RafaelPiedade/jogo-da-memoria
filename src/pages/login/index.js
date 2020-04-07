@@ -1,8 +1,8 @@
-const LoginPage = () => {
+const login = () => {
   const $root = document.querySelector("#root");
 
-  const $loginButton = flatButton.render({content:"Login", active:true, onclick:"goToLogin()"});
-  const $singupButton = flatButton.render({content:"sing up", onclick:"goToSignup()"});
+  const $loginButton = flatButton.render({content:"Login", active:true, path:"login"});
+  const $singupButton = flatButton.render({content:"sing up", path:"signup"});
 
   const $logoCollabcode = logoCollabcode.render();
   const $titleLogin = titleLogin.render("Hello!");
