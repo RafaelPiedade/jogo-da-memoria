@@ -1,7 +1,6 @@
 LoginPage();
 
 const goToSignup = () => {
-  console.log("aa");
   const $root = document.querySelector("#root");
   let $children = $root.firstElementChild;
   while ($children) {
