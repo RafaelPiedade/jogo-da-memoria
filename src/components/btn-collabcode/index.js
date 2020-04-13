@@ -15,6 +15,7 @@ const btnCollabcode = (() => {
           height:48px;
           border-radius: 24px;
           font-weight: bold;
+          cursor:pointer;
       }
       .input-collabcode + .btn-collabcode{
           margin-top:45px;
@@ -30,14 +31,14 @@ const btnCollabcode = (() => {
     return `<input 
     class="btn-collabcode"
     type="submit" 
-    value="${content}"
-    onClick="btnCollabcode.handleClick(event,'${path}')"
+    value="${content}""
     />`;
+    //onClick="btnCollabcode.handleClick(event,'${path}')
   };
 
   module.handleClick = (event, path) => {
     event.preventDefault();
-    window.location.hash = `/${path}`;
+   // window.location.hash = `/${path}`;
   };
 
   return {
