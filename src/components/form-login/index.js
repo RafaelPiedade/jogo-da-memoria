@@ -16,6 +16,7 @@ const formLogin = (() => {
   module._children = () => {
     const $labelEmail = labelCollabcode.render("Username ou e-mail");
     const $inputEmail = inputCollabcode.render({
+      id: "email",
       placeholder: "example@email.com",
     });
 
@@ -55,14 +56,38 @@ const formLogin = (() => {
         <form 
           class="form-login"
           method="POST" 
-          action=""
+          onSubmit="formLogin.submit(event, this)"
         >
            ${module._children()}
         </form>
         `;
   };
 
+  module.submit = (event, $form) => {
+    event.preventDefault();
+    console.log($form);
+    const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const $email = $form.querySelector("#email");
+    const $password = $form.querySelector("#password");
+
+    if ($email.value.length === 0 || !emailRegExp.test($email.value)) {
+      alertCollabcode.showAlert({
+        content: "Please enter a valid email",
+        type: "error",
+      });
+    } else if ($password.value.length < 8) {
+      alertCollabcode.showAlert({
+        content: "Password must be longer than 8 digits",
+        type: "error",
+      });
+    } else {
+      window.location.hash = "/game";
+    }
+    // window.location.hash = `/${path}`;
+  };
+
   return {
     render: module.render,
+    submit: module.submit,
   };
 })();
