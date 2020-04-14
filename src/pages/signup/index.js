@@ -11,6 +11,7 @@ const singnup = () => {
     path: "signup"
   });
 
+  alertCollabcode.render()
   const $logoCollabcode = logoCollabcode.render();
   const $titleLogin = titleLogin.render("Welcome!");
   const $logoWrapper = logoWrapper.render($logoCollabcode, $titleLogin);

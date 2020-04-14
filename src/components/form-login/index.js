@@ -65,7 +65,6 @@ const formLogin = (() => {
 
   module.submit = (event, $form) => {
     event.preventDefault();
-    console.log($form);
     const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     const $email = $form.querySelector("#email");
     const $password = $form.querySelector("#password");
@@ -83,7 +82,6 @@ const formLogin = (() => {
     } else {
       window.location.hash = "/game";
     }
-    // window.location.hash = `/${path}`;
   };
 
   return {
